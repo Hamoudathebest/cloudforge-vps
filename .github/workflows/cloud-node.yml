@@ -54,6 +54,7 @@ jobs:
           SERVER_ID: ${{ inputs.server_id }}
           CYCLE: ${{ inputs.cycle || '1' }}
           MAX_RUNTIME_SEC: ${{ inputs.max_runtime_sec || '20400' }}
+          TAILSCALE_AUTHKEY: ${{ secrets.TAILSCALE_AUTHKEY }}
         run: |
           python (Join-Path $env:RUNNER_TEMP "cf_agent.py")
           exit $LASTEXITCODE
